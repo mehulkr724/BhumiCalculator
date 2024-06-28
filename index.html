@@ -41,7 +41,7 @@
 </head>
 <body>
     <div id="converter">
-        <h1>Length Converter</h1>
+        <h1>Area Converter</h1>
         <input type="number" id="inputValue" placeholder="Enter value">
         <select id="fromUnit">
             <option value="एकड़">एकड़ </option>
@@ -387,7 +387,7 @@
                 result = inputValue * 1;
             }
 
-            document.getElementById("result").textContent = `Result: ${result.toFixed(10)} ${toUnit}`;
+            document.getElementById("result").textContent = `Result: ${result.toFixed(4)} ${toUnit}`;
         }
     </script>
 </body>
