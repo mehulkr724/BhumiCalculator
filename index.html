@@ -73,12 +73,12 @@
           <option value="वर्ग हाथ">वर्ग हाथ</option>
           <option value="वर्ग गज">वर्ग गज</option>
         </select>
-        <button onclick="convertLength()" >Convert</button>
+        <button onclick="convertArea()" >Convert</button>
         <p id="result" ></p>
     </div>
 
     <script>
-        function convertLength() {
+        function convertArea() {
             const inputValue = parseFloat(document.getElementById("inputValue").value);
             const fromUnit = document.getElementById("fromUnit").value;
             const toUnit = document.getElementById("toUnit").value;
@@ -389,6 +389,222 @@
                 result = inputValue * 1;
             }
 
+            document.getElementById("result").textContent = `Result: ${result.toFixed(4)} ${toUnit}`;
+        }
+    </script>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: beige;
+        }
+        #converter {
+            margin: 20px auto;
+            max-width: 400px;
+            font-size: 20px;
+        }
+        input[type="number"] {
+            width: 93.5%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        button {
+            padding: 15px 20px; /* Adjust padding for height and width */
+            font-size: 18px; /* Increase font size */
+            background-color: #4CAF50;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #40ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="converter">
+        <h2>Length Converter</h2>
+        <input type="number" id="inputValue" placeholder="Enter value">
+        <select id="fromUnit">
+            <option value="जरीब">जरीब </option>
+            <option value="कड़ी">कड़ी</option>
+            <option value="फीट">फीट</option>
+            <option value="इंच">इंच </option>
+            <option value="हाथ">हाथ</option>
+            <option value="लग्गा">लग्गा</option>
+            <option value="मीटर">मीटर</option>
+            <option value="गज">गज</option>
+        </select>
+        <select id="toUnit">
+            <option value="जरीब">जरीब </option>
+            <option value="कड़ी">कड़ी</option>
+            <option value="फीट">फीट</option>
+            <option value="इंच">इंच </option>
+            <option value="हाथ">हाथ</option>
+            <option value="लग्गा">लग्गा</option>
+            <option value="मीटर">मीटर</option>
+            <option value="गज">गज</option>
+        </select>
+        <button onclick="convertLength()" >Convert</button>
+        <p id="result" ></p>
+    </div>
+
+    <script>
+        function convertLength() {
+            const inputValue = parseFloat(document.getElementById("inputValue").value);
+            const fromUnit = document.getElementById("fromUnit").value;
+            const toUnit = document.getElementById("toUnit").value;
+
+            // Conversion logic (customize as needed)
+            let result;
+            if (toUnit === "जरीब" && fromUnit === "जरीब") {
+                result = inputValue * 1;
+            } else if (toUnit === "जरीब" && fromUnit === "कड़ी") {
+                result = inputValue * 0.01;
+            } else if (toUnit === "जरीब" && fromUnit === "फीट") {
+                result = inputValue * 0.01515;
+            } else if (toUnit === "जरीब" && fromUnit === "इंच") {
+                result = inputValue * 0.00126;
+            } else if (toUnit === "जरीब" && fromUnit === "हाथ") {
+                result = inputValue * 0.02273;
+            } else if (toUnit === "जरीब" && fromUnit === "लग्गा") {
+                result = inputValue * 0.17045;
+            } else if (toUnit === "जरीब" && fromUnit === "मीटर") {
+                result = inputValue * 0.04971;
+            } else if (toUnit === "जरीब" && fromUnit === "गज") {
+                result = inputValue * 0.04545;
+            } 
+            else if (toUnit === "कड़ी" && fromUnit === "जरीब") {
+                result = inputValue * 100;
+            } else if (toUnit === "कड़ी" && fromUnit === "कड़ी") {
+                result = inputValue * 1;
+            } else if (toUnit === "कड़ी" && fromUnit === "फीट") {
+                result = inputValue * 1.51515;
+            } else if (toUnit === "कड़ी" && fromUnit === "इंच") {
+                result = inputValue * 0.12626;
+            } else if (toUnit === "कड़ी" && fromUnit === "हाथ") {
+                result = inputValue * 2.27273;
+            } else if (toUnit === "कड़ी" && fromUnit === "लग्गा") {
+                result = inputValue * 17.04545;
+            } else if (toUnit === "कड़ी" && fromUnit === "मीटर") {
+                result = inputValue * 4.97097;
+            } else if (toUnit === "कड़ी" && fromUnit === "गज") {
+                result = inputValue * 4.54545;
+            } 
+            else if (toUnit === "फीट" && fromUnit === "जरीब") {
+                result = inputValue * 66;
+            } else if (toUnit === "फीट" && fromUnit === "कड़ी") {
+                result = inputValue * 0.66;
+            } else if (toUnit === "फीट" && fromUnit === "फीट") {
+                result = inputValue * 1;
+            } else if (toUnit === "फीट" && fromUnit === "इंच") {
+                result = inputValue * 0.08333;
+            } else if (toUnit === "फीट" && fromUnit === "हाथ") {
+                result = inputValue * 1.5;
+            } else if (toUnit === "फीट" && fromUnit === "लग्गा") {
+                result = inputValue * 11.25;
+            } else if (toUnit === "फीट" && fromUnit === "मीटर") {
+                result = inputValue * 3.28084;
+            } else if (toUnit === "फीट" && fromUnit === "गज") {
+                result = inputValue * 3;
+            } 
+            else if (toUnit === "इंच" && fromUnit === "जरीब") {
+                result = inputValue * 792;
+            } else if (toUnit === "इंच" && fromUnit === "कड़ी") {
+                result = inputValue * 7.92;
+            } else if (toUnit === "इंच" && fromUnit === "फीट") {
+                result = inputValue * 12;
+            } else if (toUnit === "इंच" && fromUnit === "इंच") {
+                result = inputValue * 1;
+            } else if (toUnit === "इंच" && fromUnit === "हाथ") {
+                result = inputValue * 18;
+            } else if (toUnit === "इंच" && fromUnit === "लग्गा") {
+                result = inputValue * 135;
+            } else if (toUnit === "इंच" && fromUnit === "मीटर") {
+                result = inputValue * 39.37008;
+            } else if (toUnit === "इंच" && fromUnit === "गज") {
+                result = inputValue * 36;
+            }
+            else if (toUnit === "हाथ" && fromUnit === "जरीब") {
+                result = inputValue * 44;
+            } else if (toUnit === "हाथ" && fromUnit === "कड़ी") {
+                result = inputValue * 0.44;
+            } else if (toUnit === "हाथ" && fromUnit === "फीट") {
+                result = inputValue * 0.66667;
+            } else if (toUnit === "हाथ" && fromUnit === "इंच") {
+                result = inputValue * 0.05556;
+            } else if (toUnit === "हाथ" && fromUnit === "हाथ") {
+                result = inputValue * 1;
+            } else if (toUnit === "हाथ" && fromUnit === "लग्गा") {
+                result = inputValue * 7.5;
+            } else if (toUnit === "हाथ" && fromUnit === "मीटर") {
+                result = inputValue * 2.18723;
+            } else if (toUnit === "हाथ" && fromUnit === "गज") {
+                result = inputValue * 2;
+            }
+            else if (toUnit === "लग्गा" && fromUnit === "जरीब") {
+                result = inputValue * 5.866666667;
+            } else if (toUnit === "लग्गा" && fromUnit === "कड़ी") {
+                result = inputValue * 0.05867;
+            } else if (toUnit === "लग्गा" && fromUnit === "फीट") {
+                result = inputValue * 0.08889;
+            } else if (toUnit === "लग्गा" && fromUnit === "इंच") {
+                result = inputValue * 0.00741;
+            } else if (toUnit === "लग्गा" && fromUnit === "हाथ") {
+                result = inputValue * 0.13333;
+            } else if (toUnit === "लग्गा" && fromUnit === "लग्गा") {
+                result = inputValue * 1;
+            } else if (toUnit === "लग्गा" && fromUnit === "मीटर") {
+                result = inputValue * 0.29163;
+            } else if (toUnit === "लग्गा" && fromUnit === "गज") {
+                result = inputValue * 0.26667;
+            }
+            else if (toUnit === "मीटर" && fromUnit === "जरीब") {
+                result = inputValue * 20.1168;
+            } else if (toUnit === "मीटर" && fromUnit === "कड़ी") {
+                result = inputValue * 0.20117;
+            } else if (toUnit === "मीटर" && fromUnit === "फीट") {
+                result = inputValue * 0.3048;
+            } else if (toUnit === "मीटर" && fromUnit === "इंच") {
+                result = inputValue * 0.0254;
+            } else if (toUnit === "मीटर" && fromUnit === "हाथ") {
+                result = inputValue * 0.4572;
+            } else if (toUnit === "मीटर" && fromUnit === "लग्गा") {
+                result = inputValue * 3.429;
+            } else if (toUnit === "मीटर" && fromUnit === "मीटर") {
+                result = inputValue * 1;
+            } else if (toUnit === "मीटर" && fromUnit === "गज") {
+                result = inputValue * 0.9144;
+            }
+            else if (toUnit === "गज" && fromUnit === "जरीब") {
+                result = inputValue * 22;
+            } else if (toUnit === "गज" && fromUnit === "कड़ी") {
+                result = inputValue * 0.22;
+            } else if (toUnit === "गज" && fromUnit === "फीट") {
+                result = inputValue * 0.33333;
+            } else if (toUnit === "गज" && fromUnit === "इंच") {
+                result = inputValue * 0.02778;
+            } else if (toUnit === "गज" && fromUnit === "हाथ") {
+                result = inputValue * 0.5;
+            } else if (toUnit === "गज" && fromUnit === "लग्गा") {
+                result = inputValue * 3.75;
+            } else if (toUnit === "गज" && fromUnit === "मीटर") {
+                result = inputValue * 1.09361;
+            } else if (toUnit === "गज" && fromUnit === "गज") {
+                result = inputValue * 1;
+            }
             document.getElementById("result").textContent = `Result: ${result.toFixed(4)} ${toUnit}`;
         }
     </script>
